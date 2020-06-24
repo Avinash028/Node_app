@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <div class="container mb-4">
+            <h1>New Article</h1>
+        <form method="post" action="/contact">
+            <div class="form-group">
+              <label>Title</label>
+              <input required type="text" class="form-control" name="title" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <textarea type="text" class="form-control" name="Description" placeholder=""></textarea>
+              </div>
+           
+              <div class="form-group">
+                <label>Story</label>
+                <textarea required type="text" class="form-control" name="story" rows="8"></textarea>
+              </div>
+
+              <input type="submit" class="btn btn-primary">
+          </form>
+        </div>
+
+    </body>
+</html>

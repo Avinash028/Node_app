@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container lead mb-4 mt-2">
+            <h1>Articles</h1>
+        </div>
+    
+
+    <div class="container mb-5">        
+        <a href="/new" class="btn btn-success">Add Article</a>
+    </div>
+
+
+    <% for(var i=0;i<data.length; i++){ %>
+        <div class="container">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4 class="card-title"><%=data[i].title%></h4>
+                <h6 class="card-subtitle mb-2 text-muted"><%=data[i].createdat.toLocaleDateString() %></h6>
+                <p class="card-text mb-2"><%=data[i].description %></p>
+
+                <form action="/view/<%= data[i].id %>" method="GET" class="d-inline">
+                    <button type="submit" class="btn btn-primary">Read More</button>
+                  </form>
+
+                <form action="/update/<%= data[i].id %>?_method=PUT" method="GET" class="d-inline">
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                  </form>
+
+                <form action="/delete/<%= data[i].id %>?_method=DELETE" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                  </form>
+        
+                  
+            </div>
+        </div>
+        </div>
+
+        
+        <%  } %>
+
+    </body>
+
+</html>
